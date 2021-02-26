@@ -6,8 +6,7 @@ before_deploy:
   
 deploy:
    provider: releases
-       api_key:
-           secure: 
+       api_key: 1f0e23e258058dc45c919714ecad3a8eb0eafe97
        file:
            - target/SashaCP-$project_version.jar
        skip_cleanup: true
