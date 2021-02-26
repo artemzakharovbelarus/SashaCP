@@ -8,7 +8,7 @@ public class SashaConfig {
     private String password;
     private int poolSize;
 
-    public SashaConfig() { }
+    public SashaConfig() {wqewqe }
 
     public String getDriver() {
         return driver;
