@@ -3,17 +3,24 @@ language: java
 before_deploy:
   - mvn help:evaluate -N -Dexpression=project.version|grep -v '\['
   - export project_version=$(mvn help:evaluate -N -Dexpression=project.version|grep -v '\[')
-  
-deploy:
-   provider: releases
-       api_key: 1f0e23e258058dc45c919714ecad3a8eb0eafe97
-       file:
-           - target/SashaCP-$project_version.jar
-       skip_cleanup: true
-       on:
-           repo: artemzakharovbelarus/SashaCP
-       name: $project_version
 
+jobs:
+  include:
+    - script: echo "Running unit tests (1)"
+    - script: echo "Running unit tests (2)"
+    - stage: GitHub Release
+      script: echo "Deploying to GitHub releases ..."
+      deploy:
+        provider: releases
+        api_key: 1f0e23e258058dc45c919714ecad3a8eb0eafe97
+        file:
+           - target/SashaCP-$project_version.jar
+        skip_cleanup: true
+        on:
+          repo: artemzakharovbelarus/SashaCP
+          tags: true  
+        name: $project_version
+          
 sudo: false
 
 notifications:
