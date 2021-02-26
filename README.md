@@ -1,4 +1,5 @@
 # SashaCP
+[![Build Status](https://travis-ci.com/artemzakharovbelarus/SashaCP.svg?branch=main)](https://travis-ci.com/artemzakharovbelarus/SashaCP)
 
 ## Author: Artem Zakharov
 
