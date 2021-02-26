@@ -1,5 +1,5 @@
 # SashaCP
 
-## Author: Artem Zakharov.
+## Author: Artem Zakharov
 
 Repository for custom connection pool from Artem Zakharov.
