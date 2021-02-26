@@ -1,0 +1,10 @@
+language: java
+
+sudo: false
+
+notifications:
+  email:
+    recipients:
+      - temax359x@gmail.com
+    on_success: never
+    on_failure: always
