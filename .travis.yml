@@ -3,6 +3,17 @@ language: java
 before_deploy:
   - mvn help:evaluate -N -Dexpression=project.version|grep -v '\['
   - export project_version=$(mvn help:evaluate -N -Dexpression=project.version|grep -v '\[')
+  
+deploy:
+   provider: releases
+       api_key:
+           secure: 
+       file:
+           - target/SashaCP-$project_version.jar
+       skip_cleanup: true
+       on:
+           repo: artemzakharovbelarus/SashaCP
+       name: $project_version
 
 sudo: false
 
